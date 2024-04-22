@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next JS - App Router
 
-## Getting Started
+## Installation
+```
+pnpm create next-app@latest
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> Option: 
+What is your project named? ...                                  demo03-app
+Would you like to use TypeScript? ...                            (No) /  Yes
+Would you like to use ESLint? ...                                 No  / (Yes)
+Would you like to use Tailwind CSS? ...                           No  / (Yes)
+Would you like to use `src/` directory? ...                       No  / (Yes)
+Would you like to use App Router? (recommended) ...               No  / (Yes)
+Would you like to customize the default import alias (@/*)? ...  (No) /  Yes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routing
+Contrairement au "Page Router", le "App Router" va rendre accessible uniquement les fichiers qui se nomme "page" dans le dossier "app"
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Convention de nommage des fichiers
+- page : Page Web (accessible)
+- layout: Composant de layoute de la page
+- loading: Page de chargement (via l'utilisation de l'async/await)
+- not-found: Page 404
+- error: Page d'erreur général
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Une hierarchie de composant est créer en fonction des fichiers créés dans le dossier de la route
+![file convention](docs/file-conventions-component-hierarchy.avif)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Penser en NextJS App
+Il existe 2 types de composent avec le "App Router" : 
+ - Composant serveur (Rendu depuis le serveur)
+ - Composant client (Interaction de l'utilisateur possible)
+ 
+ ![thinking in ppr](docs/thinking-in-ppr.avif)
